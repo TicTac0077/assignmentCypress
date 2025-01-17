@@ -74,15 +74,6 @@ describe("CandyMapper Halloween Party Tests", () => {
             .highlight()
             .click();
 
-        // Select a random value from the dropdown options
-        Cypress.Commands.add("getIframeBody", (iframeSelector) => {
-            return cy
-                .get(iframeSelector)
-                .its("0.contentDocument.body") // Access the iframe's body
-                .should("not.be.empty") // Ensure the iframe is loaded
-                .then(cy.wrap); // Wrap the iframe body for further commands
-        });
-
         // Access the iframe body
         cy.getIframeBody("#iframe-03")
             .find("#guests").highlight() // Locate the element with the ID 'guests'
@@ -130,16 +121,7 @@ describe("CandyMapper Halloween Party Tests", () => {
             .contains("zombies", { matchCase: false })
             .highlight()
             .click();
-
-        // Select a random value from the dropdown options
-        Cypress.Commands.add("getIframeBody", (iframeSelector) => {
-            return cy
-                .get(iframeSelector)
-                .its("0.contentDocument.body") // Access the iframe's body
-                .should("not.be.empty") // Ensure the iframe is loaded
-                .then(cy.wrap); // Wrap the iframe body for further commands
-        });
-
+        
         // Access the iframe body
         cy.getIframeBody("#iframe-03")
             .find("#guests") // Locate the element with the ID 'guests'
